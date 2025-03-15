@@ -1,16 +1,7 @@
 import argparse
 import sys
 
-
-def main() -> None:
-    """Main program logic
-    """
-    args = get_args()
-
-    if args.verbose:
-        print(f"Command: {args.command}")
-
-    args.func(args)
+from .version import version
 
 
 def get_args() -> argparse.Namespace:
@@ -39,16 +30,3 @@ def get_args() -> argparse.Namespace:
         sys.exit(0)
 
     return args
-
-
-def version(args: argparse.Namespace) -> None:
-    """Print version number and exit
-    """
-    _ = args
-
-    print("v0.0.0.9000")
-    sys.exit(0)
-
-
-if __name__ == "__main__":
-    main()
